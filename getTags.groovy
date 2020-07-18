@@ -2,8 +2,8 @@ import groovy.json.JsonSlurper
 // GET
 try {
     def get = new URL("http://yourinternalnexusurl:8018/applicacation/v1...etc").openConnection();
-    def getRC = get.getResponseCode();
-    if (getRC.equals(200)) {
+    def conn = get.getResponseCode();
+    if (conn.equals(200)) {
         def nexus_response = [:]
         nexus_response = new JsonSlurper().parseText(get.getInputStream().getText())
         def image_tag_list = []
